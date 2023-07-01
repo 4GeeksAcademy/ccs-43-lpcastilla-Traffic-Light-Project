@@ -7,8 +7,18 @@ const Home = () => {
 	const [ color, setColor] = useState(null);
 	
 	const handleClick = (flashLight) => {
-		setColor(flashLight);
-	  };
+		if (color === flashLight) {
+			setColor(null);
+		  } else {
+			setColor(flashLight);
+		};
+	}
+
+	const handleRandomLight = () => {
+		const colors = ["red", "yellow", "green"];
+		const randomColor = colors[Math.floor(Math.random() * colors.length)];
+		setColor(randomColor);
+	};
 	
 	  return (
 		<div className="trafficLight">
@@ -38,9 +48,17 @@ const Home = () => {
 					></button>
 				</div>
 			</div>
+			<div className="lowerPart d-flex mt-1">
+				<div className="random text-center">
+					<button
+						className="btn btn-primary"
+						onClick={handleRandomLight}
+						type="button" 
+					>Random Color</button>
+				</div>
+			</div>
 		</div>
 	  );
 	};
-	
+
 	export default Home;
-	

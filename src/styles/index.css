@@ -27,3 +27,13 @@
 .active {
     box-shadow: 0 0 60px #fff;
 }
+
+.lowerPart {
+    justify-content: center;
+}
+
+.random {
+    width: 120px;
+    height: 80px;
+    margin: 5px;
+}
